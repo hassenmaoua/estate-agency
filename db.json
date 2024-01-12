@@ -1,0 +1,197 @@
+{
+  "residences": [
+    {
+      "id": 1,
+      "name": "El fel",
+      "address": "Borj Cedria",
+      "image": "../../assets/images/R1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "El yasmine",
+      "address": "Ezzahra",
+      "image": "../../assets/images/R2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "El Arij",
+      "address": "Rades",
+      "image": "../../assets/images/R3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "El Anber",
+      "address": "Manzah 5",
+      "image": "../../assets/images/R4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "La Perla",
+      "address": "La Marsa",
+      "image": "../../assets/images/R5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Golden Sands",
+      "address": "Gammarth",
+      "image": "../../assets/images/R6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Jasmine Towers",
+      "address": "Les Berges du Lac",
+      "image": "../../assets/images/R7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Royal Residence",
+      "address": "Carthage",
+      "image": "../../assets/images/R8.jpg"
+    }
+  ],
+  "appartements": [
+    {
+      "id": 1,
+      "appartNum": 1,
+      "floorNum": 0,
+      "surface": 100,
+      "terrace": "yes",
+      "surfaceTerrace": 20,
+      "category": "S+1",
+      "description": "AppartementS+1",
+      "residence": 0
+    },
+    {
+      "appartNum": 2,
+      "floorNum": 0,
+      "surface": 122,
+      "terrace": "no",
+      "surfaceTerrace": 0,
+      "category": "S+2",
+      "description": "AppartementS+2",
+      "residence": 0,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "appartNum": 3,
+      "floorNum": 0,
+      "surface": 150,
+      "terrace": "yes",
+      "surfaceTerrace": 30,
+      "category": "S+3",
+      "description": "AppartementS+3",
+      "residence": 1
+    },
+    {
+      "id": 4,
+      "appartNum": 4,
+      "floorNum": 0,
+      "surface": 120,
+      "terrace": "yes",
+      "surfaceTerrace": 25,
+      "category": "S+2",
+      "description": "AppartementS+2",
+      "residence": 3
+    },
+    {
+      "id": 5,
+      "appartNum": 5,
+      "floorNum": 1,
+      "surface": 90,
+      "terrace": "no",
+      "surfaceTerrace": 0,
+      "category": "S+1",
+      "description": "AppartementS+1",
+      "residence": 3
+    },
+    {
+      "id": 6,
+      "appartNum": 6,
+      "floorNum": 0,
+      "surface": 110,
+      "terrace": "yes",
+      "surfaceTerrace": 20,
+      "category": "S+1",
+      "description": "AppartementS+1",
+      "residence": 4
+    },
+    {
+      "id": 7,
+      "appartNum": 7,
+      "floorNum": 2,
+      "surface": 140,
+      "terrace": "yes",
+      "surfaceTerrace": 30,
+      "category": "S+3",
+      "description": "AppartementS+3",
+      "residence": 4
+    },
+    {
+      "id": 8,
+      "appartNum": 8,
+      "floorNum": 1,
+      "surface": 100,
+      "terrace": "no",
+      "surfaceTerrace": 0,
+      "category": "S+2",
+      "description": "AppartementS+2",
+      "residence": 5
+    },
+    {
+      "id": 9,
+      "appartNum": 9,
+      "floorNum": 0,
+      "surface": 130,
+      "terrace": "yes",
+      "surfaceTerrace": 25,
+      "category": "S+1",
+      "description": "AppartementS+1",
+      "residence": 5
+    },
+    {
+      "id": 10,
+      "appartNum": 10,
+      "floorNum": 2,
+      "surface": 150,
+      "terrace": "yes",
+      "surfaceTerrace": 40,
+      "category": "S+3",
+      "description": "AppartementS+3",
+      "residence": 6
+    },
+    {
+      "id": 11,
+      "appartNum": 11,
+      "floorNum": 0,
+      "surface": 80,
+      "terrace": "no",
+      "surfaceTerrace": 0,
+      "category": "S+1",
+      "description": "AppartementS+1",
+      "residence": 6
+    },
+    {
+      "id": 12,
+      "appartNum": 12,
+      "floorNum": 1,
+      "surface": 120,
+      "terrace": "yes",
+      "surfaceTerrace": 30,
+      "category": "S+2",
+      "description": "AppartementS+2",
+      "residence": 6
+    },
+    {
+      "id": 13,
+      "appartNum": 123,
+      "floorNum": 12,
+      "surface": 123,
+      "terrace": "yes",
+      "surfaceTerrace": 123,
+      "category": "S+1",
+      "description": "&&&&&&&&&&&&&&&&&&&&&&&&&&",
+      "residence": 3
+    }
+  ]
+}

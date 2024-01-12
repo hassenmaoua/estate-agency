@@ -1,0 +1,90 @@
+<div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <div class="card-title">
+            <h2>Appartements List</h2>
+        </div>
+        <div class="card-toolbar d-flex justify-content-between align-items-end gap-1">
+
+
+
+            <div>
+                <label class="label text-secondary fs-8" for="surfaceFilter">Filter by Surface
+                    (<span class="fw-bold">{{countSurface }}</span>)</label>
+
+                <input class="form-control form-control-sm" type="number" id="surfaceFilter"
+                    [(ngModel)]="surfaceFilter" />
+            </div>
+
+            <button class="btn btn-sm btn-outline-warning">Search</button>
+
+            <button class="btn btn-sm btn-warning">
+                Create
+            </button>
+
+        </div>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>N°</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Surface</th>
+                    <th>Terrace</th>
+                    <th>S. Terrace</th>
+                    <th>Residance</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody *ngIf="getFilteredApartments().length > 0; else noApartments">
+                <tr style="margin-bottom: 1rem" *ngFor="let apartment of getFilteredApartments()">
+                    <th>#{{ apartment.id }}</th>
+                    <td>{{ apartment.appartNum }}</td>
+                    <td><a routerLink="/apartement/{{ apartment.id }}" class="nav-link link-secondary">{{
+                            apartment.description }}</a></td>
+                    <td>{{ apartment.category }}</td>
+                    <td>{{ apartment.surface }}</td>
+                    <td>{{ apartment.terrace }}</td>
+                    <td>{{ apartment.surfaceTerrace }}</td>
+                    <td>{{ apartment.residence.name }}</td>
+                    <td>
+                        <div class="d-flex gap-1">
+                            <button class="btn btn-sm btn-outline-danger" (click)="handleDelete(apartment.id)">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-warning" [class.active]="isFavorite(apartment.id)"
+                                (click)="handleFavorit(apartment.id)">
+                                <i class="bi bi-star"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary" (click)="handleUpdate(apartment.id)">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <a class="btn btn-sm btn-outline-secondary" routerLink="/apartement/{{ apartment.id }}"> <i
+                                    class="bi bi-eye"></i></a>
+                            <button class="btn btn-sm btn-secondary" (click)="handleBuyAppartement(apartment.id)"
+                                [disabled]="isAppartementAvailable(apartment.id)">
+                                <i *ngIf="!isAppartementAvailable(apartment.id)" class="bi bi-cart"></i>
+                                <i *ngIf="isAppartementAvailable(apartment.id)" class="bi bi-cart-check-fill"></i>
+                            </button>
+
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+            <ng-template #noApartments>
+                <tbody>
+                    <tr>
+                        <td colspan="8" class="text-center">
+                            No apartments found for this residence.
+                        </td>
+                    </tr>
+                </tbody>
+            </ng-template>
+        </table>
+    </div>
+</div>

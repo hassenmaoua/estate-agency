@@ -1,0 +1,38 @@
+<nav class="navbar navbar-dark bg-dark box-shadow sticky-top px-5 navbar-expand-lg">
+    <a class="navbar-brand" routerLink="/"><span class="fw-bold p-1 me-1">Estate</span> <span
+            class="text-dark bg-warning rounded p-1 fw-bold">Agency</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/residences">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/residences/add">Add Residence</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/apartements">Apartements</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/apartements/add">Add Apartement</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 d-flex">
+            <input class="form-control me-2" type="search" placeholder="Type something here..." aria-label="Search" />
+            <button class="btn btn-outline-secondary my-2 my-sm-0 d-flex me-2" type="submit">
+                <i class="bi bi-search pe-1"></i> Search
+            </button>
+            <a routerLink="/register" class="btn btn-secondary my-2 my-sm-0 d-flex me-2" type="button">
+                <i class="bi bi-key pe-2"></i> Register
+            </a>
+            <a routerLink="/login" class="btn btn-warning my-2 my-sm-0 d-flex" type="button">
+                <i class="bi bi-person-circle pe-2"></i> Login
+            </a>
+        </form>
+    </div>
+</nav>

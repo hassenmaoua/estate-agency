@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+.form-control:focus, .form-check-input:focus {
+  border-color: #f0ad4e !important;;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(240, 173, 78, 0.6) !important;;
+}
+
+
+//see it's necesary import both scss/functions and scss/variables
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+
+$primary: $warning;
+$danger: 	#ff0505;
+//futhermore it's necesary override the $theme-colors
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+
+$form-check-input-checked-color: #c38c41;
+$form-check-input-checked-bg-color: $warning;
+$form-check-input-checked-border-color: $warning;
+
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';

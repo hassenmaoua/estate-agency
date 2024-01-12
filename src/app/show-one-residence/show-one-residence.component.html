@@ -1,0 +1,88 @@
+<div class="card mx-auto mt-3">
+    <div class="row post-header col-12 py-2 px-3">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <h4 class="mb-0">{{ residence.name }}</h4>
+            <p style="color: darkgrey" class="card-text">
+                {{ residence.address }}
+            </p>
+        </div>
+    </div>
+    <img class="card-img" [src]="residence.image" alt="image" />
+    <div class="card-body px-3">
+        <div class="card-title d-flex align-items-center">
+            <button class="btn btn-outline-warning me-2" [class.active]="isLiked" (click)="handleLike()">
+                <i *ngIf="!isLiked" class="bi bi-heart"></i>
+                <i *ngIf="isLiked" class="bi bi-heart-fill"></i>
+                <span class="ms-2">{{ isLiked ? "Liked" : "Like" }}</span>
+            </button>
+            <button class="btn btn-secondary" (click)="showApartments(key)">
+                <i *ngIf="selectedResidenceIndex !== key" class="bi bi-caret-down-fill"></i>
+                <i *ngIf="selectedResidenceIndex === key" class="bi bi-caret-up-fill"></i>
+
+                {{ selectedResidenceIndex === key ?
+                'Hide Appartements' : 'Show Appartements' }} </button>
+        </div>
+    </div>
+
+    <div class="card-body border-top" *ngIf="selectedResidenceIndex === key">
+        <div class="mb-3">
+            <label class="label text-secondary" for="surfaceFilter">Filter by Surface</label>
+            <input class="form-control form-control-sm" type="number" id="surfaceFilter" [(ngModel)]="surfaceFilter" />
+        </div>
+        <h5>Available Apartments</h5>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>N°</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Surface</th>
+                    <th>Terrace</th>
+                    <th>S. Terrace</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody *ngIf="getFilteredApartments().length > 0; else noApartments">
+                <tr style="margin-bottom: 1rem" *ngFor="let apartment of getFilteredApartments()">
+                    <th>#{{ apartment.id }}</th>
+                    <td>{{ apartment.appartNum }}</td>
+                    <td><a routerLink="/apartement/{{ apartment.id }}" class="nav-link link-secondary">{{
+                            apartment.description }}</a></td>
+                    <td>{{ apartment.category }}</td>
+                    <td>{{ apartment.surface }}</td>
+                    <td>{{ apartment.terrace }}</td>
+                    <td>{{ apartment.surfaceTerrace }}</td>
+                    <td>
+                        <div class="d-flex gap-1">
+                            <button class="btn btn-sm btn-outline-warning" [class.active]="isFavorite(apartment.id)"
+                                (click)="handleFavorit(apartment.id)">
+                                <i class="bi bi-star"></i>
+                            </button>
+                            <a class="btn btn-sm btn-outline-secondary" routerLink="/apartement/{{ apartment.id }}"> <i
+                                    class="bi bi-eye"></i></a>
+                            <button class="btn btn-sm btn-secondary" (click)="handleBuyAppartement(apartment.id)"
+                                [disabled]="isAppartementAvailable(apartment.id)">
+                                <i *ngIf="!isAppartementAvailable(apartment.id)" class="bi bi-cart"></i>
+                                <i *ngIf="isAppartementAvailable(apartment.id)" class="bi bi-cart-check-fill"></i>
+                            </button>
+
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+            <ng-template #noApartments>
+                <tbody>
+                    <tr>
+                        <td colspan="8" class="text-center">
+                            No apartments found for this residence.
+                        </td>
+                    </tr>
+                </tbody>
+            </ng-template>
+        </table>
+    </div>
+</div>
